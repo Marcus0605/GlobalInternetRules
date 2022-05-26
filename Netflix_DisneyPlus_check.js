@@ -27,7 +27,7 @@ var flags = new Map([["AC", "🇦🇨"], ["AE", "🇦🇪"], ["AF", "🇦🇫"],
             'icon-color': '#FF2D55',
         }
         let [{ region, status }] = await Promise.all([testDisneyPlus()])
-        await Promise.all([check_netflix(), check_youtube_premium()])
+        await Promise.all([check_netflix()])
             .then((result) => {
                 console.log(result)
                 let disney_result = ""
