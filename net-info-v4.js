@@ -57,10 +57,10 @@ if (!v4.primaryAddress) {
     $done({
       title: wifi.ssid ? wifi.ssid : cellularInfo,
       content:
-        `[IP 地址]\n` +
-        (v4.primaryAddress ? `v4 @ ${v4.primaryAddress} \n` : '') +
-        (v4.primaryRouter && wifi.ssid ? `Router v4 @ ${v4.primaryRouter}\n` : '') +
-        `[节点 ISP] ${info.isp}\n` +
+        `[IPv4 地址] ` +
+        (v4.primaryAddress ? `${v4.primaryAddress} \n` : '') +
+        (v4.primaryRouter && wifi.ssid ? `[IPv4 路由] ${v4.primaryRouter}\n` : '') +
+        `[节点  ISP] ${info.isp}\n` +
         `[节点位置] ${getFlagEmoji(info.countryCode)} | ${info.country} - ${info.city
         }`,
       icon: wifi.ssid ? 'wifi' : 'simcard',
