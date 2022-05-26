@@ -51,21 +51,21 @@ if (!v4.primaryAddress) {
         icon: 'wifi.exclamationmark',
         'icon-color': '#CB1B45',
       });
+    }else{
+      const info = JSON.parse(data);
+      $done({
+        title: wifi.ssid ? wifi.ssid : cellularInfo,
+        content:
+          `[IPv4 地址] ` +
+          (v4.primaryAddress ? `${v4.primaryAddress} \n` : '') +
+          (v4.primaryRouter && wifi.ssid ? `[IPv4 路由] ${v4.primaryRouter}\n` : '') +
+          `[节点  ISP] ${info.isp}\n` +
+          `[节点位置] ${getFlagEmoji(info.countryCode)} | ${info.country} - ${info.city
+          }`,
+        icon: wifi.ssid ? 'wifi' : 'simcard',
+        'icon-color': wifi.ssid ? '#005CAF' : '#F9BF45',
+      });
     }
-
-    const info = JSON.parse(data);
-    $done({
-      title: wifi.ssid ? wifi.ssid : cellularInfo,
-      content:
-        `[IPv4 地址] ` +
-        (v4.primaryAddress ? `${v4.primaryAddress} \n` : '') +
-        (v4.primaryRouter && wifi.ssid ? `[IPv4 路由] ${v4.primaryRouter}\n` : '') +
-        `[节点  ISP] ${info.isp}\n` +
-        `[节点位置] ${getFlagEmoji(info.countryCode)} | ${info.country} - ${info.city
-        }`,
-      icon: wifi.ssid ? 'wifi' : 'simcard',
-      'icon-color': wifi.ssid ? '#005CAF' : '#F9BF45',
-    });
   });
 }
 
