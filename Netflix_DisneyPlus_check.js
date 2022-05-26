@@ -33,11 +33,11 @@ var flags = new Map([["AC", "🇦🇨"], ["AE", "🇦🇪"], ["AF", "🇦🇫"],
                 let disney_result = ""
                 if (status == STATUS_COMING) {
                     //console.log(1)
-                    disney_result = "Disney+：即将登陆 ➤ " + flags.get(region.toUpperCase())
+                    disney_result = "Disney+：即将登陆 ➤ " + flags.get(region.toUpperCase()) + " | " + region.toUpperCase()
                 } else if (status == STATUS_AVAILABLE) {
                     //console.log(2)
                     console.log(region)
-                    disney_result = "Disney+：支持 ➤ " + flags.get(region.toUpperCase())
+                    disney_result = "Disney+：支持 ➤ " + flags.get(region.toUpperCase()) + " | " + region.toUpperCase()
                     // console.log(result["Disney"])
                 } else if (status == STATUS_NOT_AVAILABLE) {
                     //console.log(3)
@@ -103,7 +103,7 @@ async function check_netflix() {
             if (code === 'Not Found') {
                 return inner_check(80018499)
             }
-            netflix_check_result += '完全解锁 ➤ ' + flags.get(code.toUpperCase())
+            netflix_check_result += '完全解锁 ➤ ' + flags.get(code.toUpperCase()) + " | " + code.toUpperCase()
             return Promise.reject('BreakSignal')
         })
         .then((code) => {
@@ -111,7 +111,7 @@ async function check_netflix() {
                 return Promise.reject('Not Available')
             }
 
-            netflix_check_result += '仅自制剧 ➤ ' + flags.get(code.toUpperCase())
+            netflix_check_result += '仅自制剧 ➤ ' + flags.get(code.toUpperCase()) + " | " + code.toUpperCase()
             return Promise.reject('BreakSignal')
         })
         .catch((error) => {
