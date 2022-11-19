@@ -5,6 +5,7 @@ IP-CIDR,192.168.4.0/24,no-resolve
 IP-CIDR,192.168.5.100/24,no-resolve
 IP-CIDR,192.168.6.0/24,no-resolve
 IP-CIDR,192.168.253.0/24,no-resolve
+IP-CIDR,10.0.8.0/24,no-resolve
 IP-CIDR,10.0.10.0/24,no-resolve
 IP-CIDR,10.0.11.0/24,no-resolve
 IP-CIDR,10.1.5.0/24,no-resolve
