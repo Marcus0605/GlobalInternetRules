@@ -1,4 +1,4 @@
-# DOMAIN-SUFFIX,sdpt.edu.cn
+DOMAIN-SUFFIX,sdpt.edu.cn
 
 IP-CIDR,192.168.249.0/24,no-resolve
 IP-CIDR,192.168.4.0/24,no-resolve
